@@ -100,7 +100,7 @@ export class AppComponent {
 
   setData(x: any, y: any, val: any){
     // console.log([y, 6 - x, val])
-    this.finalData[x * 8 + y] = ([y, 6 - x, val])
+    this.finalData[x * 9 + y] = ([y, 6 - x, val])
   }
 
 
@@ -109,7 +109,7 @@ export class AppComponent {
     var i,j;
     for ( i = 0 ; i < 7; i++)
     {
-      for(j = 0; j < 8; j++)
+      for(j = 0; j < 9; j++)
       {
         this.setData(i, j, 0);
       }
@@ -135,7 +135,7 @@ export class AppComponent {
       for(j=0;j<cnt;j++)
       {
         let hourData=hours[hourkeys[j]];
-        let val=(hourData['hourNumber'])*2;
+        let val=(hourData['hourNumber']);
         let times=new Date(keys[i]+' '+hourkeys[j]).getTime();
         let bftimes=new Date(times);
         let compHour=bftimes.getHours();
@@ -154,6 +154,9 @@ export class AppComponent {
     },
 
     xAxis: {
+      title: {
+        text: 'Hour(GMT)'
+      },
       opposite: true,
       categories: [
         '0-3',
@@ -164,17 +167,21 @@ export class AppComponent {
         '15-18',
         '18-21',
         '21-24',
+        '%'
       ],
     },
     yAxis: {
+      title: {
+        text: 'Week Day'
+      },
       categories: [
+        'Sunday',
         'Saturday',
         'Friday',
         'Thursday',
         'Wednesday',
         'Tuesday',
-        'Monday',
-        'Sunday'
+        'Monday'
       ],
     },
 
