@@ -1,0 +1,104 @@
+{
+  "id": 123456789,
+  "currency": "EUR",
+  "dates": {
+    "2022-06-21": {
+      "dayWeek": "Tuesday",
+      "hours": {
+        "10:00": {
+          "hourNumber": 7,
+          "hourCount": 1
+        },
+        "11:00": {
+          "hourNumber": 8.13,
+          "hourCount": 5
+        },
+        "18:00": {
+          "hourNumber": 0,
+          "hourCount": 1
+        }
+      }
+    },
+    "2022-07-27": {
+      "dayWeek": "Monday",
+      "hours": {
+        "14:00": {
+          "hourNumber": 2,
+          "hourCount": 2
+        },
+        "15:00": {
+          "hourNumber": 789,
+          "hourCount": 569
+        }
+      }
+    },
+    "2022-07-28": {
+      "dayWeek": "Thursday",
+      "hours": {
+        "11:00": {
+          "hourNumber": 2,
+          "hourCount": 2
+        },
+        "19:00": {
+          "hourNumber": 0,
+          "hourCount": 2
+        }
+      }
+    },
+    "2022-01-03": {
+      "dayWeek": "Sunday",
+      "hours": {
+        "14:00": {
+          "hourNumber": 12,
+          "hourCount": 7
+        },
+        "15:00": {
+          "hourNumber": 100,
+          "hourCount": 2
+        }
+      }
+    },
+    "2022-08-18": {
+      "dayWeek": "Friday",
+      "hours": {
+        "12:00": {
+          "hourNumber": 4,
+          "hourCount": 0
+        },
+        "13:00": {
+          "hourNumber": 45,
+          "hourCount": 1
+        },
+        "14:00": {
+          "hourNumber": 3.2,
+          "hourCount": 5
+        },
+        "15:00": {
+          "hourNumber": 13,
+          "hourCount": 1
+        }
+      }
+    },
+    "2022-08-19": {
+      "dayWeek": "Friday",
+      "hours": {
+        "07:00": {
+          "hourNumber": 14,
+          "hourCount": 0
+        },
+        "20:00": {
+          "hourNumber": 23,
+          "hourCount": 1
+        },
+        "21:00": {
+          "hourNumber": 8.2,
+          "hourCount": 5
+        },
+        "12:00": {
+          "hourNumber": 6,
+          "hourCount": 1
+        }
+      }
+    }
+  }
+}
