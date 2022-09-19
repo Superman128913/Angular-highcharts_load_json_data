@@ -98,6 +98,7 @@ export class AppComponent {
     let keys = Object.keys(t_dates)
     
     var i,j;
+    var weekly_sum=0;
     for (i=0; i<len; i++)
     {
       let Data=t_dates[keys[i]];
@@ -107,7 +108,7 @@ export class AppComponent {
       
       let cnt=Object.values(hours).length;
       let hourkeys = Object.keys(hours)
-
+      
       for(j=0;j<cnt;j++)
       {
         let hourData=hours[hourkeys[j]];
@@ -118,9 +119,24 @@ export class AppComponent {
         let jj=Math.floor(compHour/3);
         var cur_val=this.getData(ii,jj);
         this.setData(ii,jj,val+cur_val);
-        console.log(ii,jj,val);
+        // console.log(ii,jj,val);
+        weekly_sum=weekly_sum+val;
       }
+
     }
+    var k,m;
+    // alert(weekly_sum);
+    for (k=0;k<7;k++)
+    {
+      var day_sum=0;
+      for (m=0;m<9;m++)
+      {
+        day_sum=day_sum+this.getData(k,m);
+      }
+      var rating=(day_sum*100/weekly_sum).toFixed(2);
+      this.setData(k,8,parseFloat(rating));
+    }
+    console.log(this.finalData);
     this.updateFlag = true;
   }
 
