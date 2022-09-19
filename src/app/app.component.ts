@@ -10,13 +10,13 @@ import { map } from 'rxjs/operators';
 // import * as data from '../assets/data.json';
 
 const week : any = {
-  "Sunday": 0,
-  "Monday": 1,
-  "Tuesday": 2,
-  "Wednesday": 3,
-  "Thursday": 4,
-  "Friday": 5,
-  "Saturday": 6
+  "Sunday": 6,
+  "Monday": 0,
+  "Tuesday": 1,
+  "Wednesday": 2,
+  "Thursday": 3,
+  "Friday": 4,
+  "Saturday": 5
 };
 
 HC_heatmap(Highcharts);
@@ -36,20 +36,9 @@ export class AppComponent {
 
   ngOnInit() {
     this.loadData();
-    // this.prepareData();
   }
 
   constructor(private http: HttpClient) {
-    // var i,j;
-    // for ( i = 0 ; i < 8; i++)
-    // {
-    //   for(j = 0; j < 7; j++)
-    //   {
-    //     // this.finalData.push([i,j,i+j*8]);
-    //     // this.finalData.push([i,j,0]);
-    //     this.setData([i,j,0])
-    //   }
-    // }
     // var i,j;
     // for ( i = 0 ; i < 7; i++)
     // {
@@ -65,24 +54,6 @@ export class AppComponent {
   
 
   loadData() {
-    // console.log(data);
-    // this.dataJason = data;
-    // this.http
-    // .get("assets/data.json").pipe(map(data => data ))
-    // .subscribe(data => {
-    //   this.dataJason = data.json();
-    //   // console.log(data);
-    // });
-      // .toPromise()
-      // .then((res) => res)
-      // .then((data) => {
-      //   // console.log(data);
-      //   this.dataJason=data;
-        
-      //   console.log(this.dataJason?.currency);
-      //   // return (this.dataJason = data);
-      // });
-
       this.http
       .get<RootObject>('assets/data.json')
       .toPromise()
@@ -101,6 +72,11 @@ export class AppComponent {
   setData(x: any, y: any, val: any){
     // console.log([y, 6 - x, val])
     this.finalData[x * 9 + y] = ([y, 6 - x, val])
+  }
+
+  getData(x: any, y: any){
+    // console.log([y, 6 - x, val])
+    return this.finalData[x * 9 + y][2];
   }
 
 
@@ -135,12 +111,14 @@ export class AppComponent {
       for(j=0;j<cnt;j++)
       {
         let hourData=hours[hourkeys[j]];
-        let val=(hourData['hourNumber']);
+        let val=(hourData['betAmount']);
         let times=new Date(keys[i]+' '+hourkeys[j]).getTime();
         let bftimes=new Date(times);
         let compHour=bftimes.getHours();
         let jj=Math.floor(compHour/3);
-        this.setData(ii,jj,val);
+        var cur_val=this.getData(ii,jj);
+        this.setData(ii,jj,val+cur_val);
+        console.log(ii,jj,val);
       }
     }
     this.updateFlag = true;
@@ -208,33 +186,8 @@ export class AppComponent {
   updateFlag = false;
 
   handleUpdate() {
-    // console.log(this.updateFlag)
-    // console.log(this.finalData[0]);
-
     // this.prepareData(this.dataJason);
-    
-    // console.log(this.finalData);
-    // // console.log(mydata);
-
-    // this.chartOptions.title =  {
-    //   text: 'Updated'
-    // };
-    
-    // // this.chartOptions.series = [
-    // //     {
-    // //       name: 'Sales per employee',
-    // //       type: 'heatmap',
-    // //       borderWidth: 1,
-    // //       data: this.finalData,
-    // //       dataLabels: {
-    // //         enabled: true,
-    // //         color: '#000000'
-    // //       }
-    // //     }
-    // //   ]
     // this.updateFlag = true;
-    // console.log(this.updateFlag)
-    // // alert(this.finalData[42]);
   }
   
 }
