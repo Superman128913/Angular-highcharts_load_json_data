@@ -6,31 +6,31 @@
       "dayWeek": "Tuesday",
       "hours": {
         "09:00": {
-          "betAmount": 7,
+          "betAmount": "7",
           "numberOfRounds": 1
         },
         "10:00": {
-          "betAmount": 8.13,
+          "betAmount": "8.13",
           "numberOfRounds": 7
         },
         "11:00": {
-          "betAmount": 18.13,
+          "betAmount": "18.13",
           "numberOfRounds": 5
         },
         "15:00": {
-          "betAmount": 9.13,
+          "betAmount": "9.13",
           "numberOfRounds": 9
         },
         "16:00": {
-          "betAmount": 5.1,
+          "betAmount": "5.1",
           "numberOfRounds": 5
         },
         "17:00": {
-          "betAmount": 78.56,
+          "betAmount": "78.56",
           "numberOfRounds": 5
         },
         "18:00": {
-          "betAmount": 56,
+          "betAmount": "56",
           "numberOfRounds": 6
         },
         "21:00": {
@@ -81,11 +81,11 @@
       "dayWeek": "Sunday",
       "hours": {
         "14:00": {
-          "betAmount": 12,
+          "betAmount": "12",
           "numberOfRounds": 7
         },
         "15:00": {
-          "betAmount": 100,
+          "betAmount": "100",
           "numberOfRounds": 2
         }
       }
@@ -94,15 +94,15 @@
       "dayWeek": "Friday",
       "hours": {
         "12:00": {
-          "betAmount": 4,
+          "betAmount": "4",
           "numberOfRounds": 0
         },
         "13:00": {
-          "betAmount": 45,
+          "betAmount": "45",
           "numberOfRounds": 1
         },
         "14:00": {
-          "betAmount": 3.2,
+          "betAmount": "3.2",
           "numberOfRounds": 5
         },
         "15:00": {
@@ -115,7 +115,7 @@
       "dayWeek": "Friday",
       "hours": {
         "07:00": {
-          "betAmount": 14,
+          "betAmount": "14",
           "numberOfRounds": 0
         },
         "20:00": {
@@ -123,7 +123,7 @@
           "numberOfRounds": 1
         },
         "21:00": {
-          "betAmount": 8.2,
+          "betAmount": "8.21342123",
           "numberOfRounds": 5
         },
         "12:00": {

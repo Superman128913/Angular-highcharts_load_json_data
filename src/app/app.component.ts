@@ -42,7 +42,7 @@ export class AppComponent {
     // var i,j;
     // for ( i = 0 ; i < 7; i++)
     // {
-    //   for(j = 0; j < 8; j++)
+    //   for(j = 0; j < 9; j++)
     //   {
     //     // this.finalData.push([i,j,i+j*8]);
     //     // this.finalData.push([i,j,0]);
@@ -112,7 +112,8 @@ export class AppComponent {
       for(j=0;j<cnt;j++)
       {
         let hourData=hours[hourkeys[j]];
-        let val=(hourData['betAmount']);
+        let val=parseFloat(hourData['betAmount']);
+        val=Math.round(val * 100) / 100;
         let times=new Date(keys[i]+' '+hourkeys[j]).getTime();
         let bftimes=new Date(times);
         let compHour=bftimes.getHours();
@@ -141,7 +142,11 @@ export class AppComponent {
   }
 
   chartOptions: Highcharts.Options = {
-    
+    tooltip: {
+      formatter: function() {
+          return '<b> Total Bet Amount: '+ this.point.value+'</b>';
+      }
+    },
     colorAxis: {
       min: 0,
       minColor: '#FFFFFF',
@@ -196,6 +201,7 @@ export class AppComponent {
         }
       }
     ],
+    // tooltipRender : 'tooltipRender($event)',
    
   };
 
@@ -205,5 +211,4 @@ export class AppComponent {
     // this.prepareData(this.dataJason);
     // this.updateFlag = true;
   }
-  
 }
